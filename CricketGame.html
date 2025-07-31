@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Game</title>
+  <link rel="stylesheet" href="cricket.css">
+</head>
+<body>
+  <div class="container">
+  <!-- 🌙/☀️ Theme Toggle Button -->
+  <button id="theme-toggle" onclick="toggleDarkMode()">🌙</button>
+
+  <!-- 🧍 Player Name Input -->
+  <input type="text" id="player-name" placeholder="Enter your name" oninput="updateName()" />
+
+  <!-- 🏏 Title -->
+  <h1>Bat Ball Stump Game</h1>
+
+  <!-- 🎮 Game Buttons -->
+  <div class="game-buttons">
+    <button class="choice-button" onclick="playGame('Bat')">
+      <img src="images/bat.png" alt="Bat" class="choice-image">
+    </button>
+    <button class="choice-button" onclick="playGame('Ball')">
+      <img src="images/ball.png" alt="Ball" class="choice-image">
+    </button>
+    <button class="choice-button" onclick="playGame('Stump')">
+      <img src="images/stump.png" alt="Stump" class="choice-image">
+    </button>
+  </div>
+
+  <!-- 📊 Results Display -->
+  <h3 id="user-move"></h3>
+  <h3 id="computer-move"></h3>
+  <h3 id="result"></h3>
+  <h3 id="score"></h3>
+
+  <!-- 📈 Score Bar -->
+  <div id="score-bar">
+    <div id="win-bar"></div>
+    <div id="loss-bar"></div>
+    <div id="tie-bar"></div>
+  </div>
+
+  <!-- 🔄 Reset Button -->
+  <button onclick="resetGame()">Reset</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

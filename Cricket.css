@@ -1,0 +1,147 @@
+/* Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  text-align: center;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+#player-name {
+  padding: 8px;
+  font-size: 16px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 1px solid #888;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Game buttons container */
+.game-buttons {
+  margin-bottom: 20px;
+}
+
+/* Game buttons */
+.choice-button {
+  height: 100px;
+  width: 100px;
+  border: none;
+  margin: 10px;
+  background-color: rgb(164, 212, 130);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.choice-button:hover {
+  transform: scale(1.1);
+}
+
+.choice-image {
+  height: 75px;
+}
+
+/* Result Animation */
+#result {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Score Bar */
+#score-bar {
+  display: flex;
+  height: 20px;
+  width: 300px;
+  margin: 20px auto;
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#win-bar { background: green; height: 100%; width: 0%; transition: width 0.3s; }
+#loss-bar { background: red; height: 100%; width: 0%; transition: width 0.3s; }
+#tie-bar { background: gray; height: 100%; width: 0%; transition: width 0.3s; }
+
+/* Theme toggle button */
+#theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 45px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode shadows */
+body.dark .choice-button,
+body.dark #score-bar,
+body.dark #theme-toggle,
+body.dark button {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  margin: 10px 5px;
+  border-radius: 8px;
+}
+
+/* Fix theme toggle for small screens */
+@media (max-width: 600px) {
+  #theme-toggle {
+    position: fixed;  /* so it doesn’t push content */
+    z-index: 1000;
+    top: 10px;
+    right: 10px;
+  }
+
+  .choice-button {
+    margin: 5px;
+  }
+
+  #player-name {
+    margin-top: 50px; /* Leave space for toggle */
+  }
+
+  .container {
+    padding-top: 20px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
